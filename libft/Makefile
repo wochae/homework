@@ -6,13 +6,15 @@
 #    By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 22:17:23 by wochae            #+#    #+#              #
-#    Updated: 2022/03/19 18:55:21 by wochae           ###   ########.fr        #
+#    Updated: 2022/03/19 22:16:32 by wochae           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = 			ft_bzero.c \
+SRCS =			ft_atoi.c \
+				ft_bzero.c \
+				ft_calloc.c \
 				ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
@@ -25,8 +27,6 @@ SRCS = 			ft_bzero.c \
 				ft_memmove.c
 
 				# ft_memcmp.c \
-				# ft_calloc.c \
-				# ft_atoi.c \
 				# ft_itoa.c \
 				# ft_memchr.c \
 				# ft_putchar_fd.c \
