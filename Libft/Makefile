@@ -6,21 +6,21 @@
 #    By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 22:17:23 by wochae            #+#    #+#              #
-#    Updated: 2022/03/16 22:17:26 by wochae           ###   ########.fr        #
+#    Updated: 2022/03/19 14:27:07 by wochae           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = libft.a
+NAME = libft.a
 
-SRCS =			ft_atoi.c \
-				ft_bzero.c \
-				ft_calloc.c \
-				ft_isalpha.c \
-				ft_isdigit.c \
+SRCS = 			ft_bzero.c \
 				ft_isalnum.c \
+				ft_isalpha.c \
 				ft_isascii.c \
-				ft_isprint.c \
-				ft_itoa.c
+				ft_isdigit.c \
+				ft_isprint.c
+				# ft_calloc.c
+				# ft_atoi.c
+				# ft_itoa.c \
 				# ft_memchr.c \
 				# ft_memcmp.c \
 				# ft_memcpy.c \
@@ -63,13 +63,15 @@ BNS_OBJS = $(BNS_OBJS:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
+HEADER = libft.h
+
 ifdef WITH_BONUS
 	OBJ_FILES = $(OBJS) $(BNS_OBJS)
 else
 	OBJ_FILES = $(OBJS)
 endif
 
-$(NAME) : $(OBJ_FILES)
+$(NAME) : $(OBJ_FILES) $(HEADER)
 		ar -rcs $(NAME) $(OBJ_FILES)
 
 all : $(NAME)
