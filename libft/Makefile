@@ -6,7 +6,7 @@
 #    By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 22:17:23 by wochae            #+#    #+#              #
-#    Updated: 2022/03/19 22:16:32 by wochae           ###   ########.fr        #
+#    Updated: 2022/03/20 20:35:23 by wochae           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,9 @@ SRCS =			ft_atoi.c \
 				ft_tolower.c \
 				ft_memset.c \
 				ft_memcpy.c \
-				ft_memmove.c
-
-				# ft_memcmp.c \
+				ft_memmove.c \
+				ft_memcmp.c \
+				ft_memchr.c
 				# ft_itoa.c \
 				# ft_memchr.c \
 				# ft_putchar_fd.c \
@@ -50,21 +50,21 @@ SRCS =			ft_atoi.c \
 
 
 
-# BNS_SRCS =	ft_lstnew.c \
-# 				ft_lstadd_front.c \
-# 				ft_lstsize.c \
-# 				ft_lstlast.c \
-# 				ft_lstadd_back.c \
-# 				ft_lstdelone.c \
-# 				ft_lstclear.c \
+BNS_SRCS =		ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c
 # 				ft_lstiter.c \
 # 				ft_lstmap.c
+
+FLAGS = -Wall -Wextra -Werror
 
 OBJS = $(SRCS:.c=.o)
 
 BNS_OBJS = $(BNS_SRCS:.c=.o)
-
-FLAGS = -Wall -Wextra -Werror
 
 HEADER = libft.h
 
@@ -76,6 +76,9 @@ endif
 
 $(NAME) : $(OBJ_FILES) $(HEADER)
 		ar -rcs $(NAME) $(OBJ_FILES)
+
+%.o : %.c $(HEADER)
+	gcc $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 
