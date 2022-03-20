@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 15:48:46 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/20 15:48:52 by wochae           ###   ########seoul.kr  */
+/*   Created: 2022/03/20 15:21:43 by wochae            #+#    #+#             */
+/*   Updated: 2022/03/20 16:46:35 by wochae           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+#include "libft.h"
+
+void ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (97 <= c && c <= 122)
-	{
-		c -= 32;
-		return (c);
-	}
-	else
-		return (c);
+	if (lst == NULL || del == NULL)
+		return;
+	del(lst->content);
+	free(lst);
+	lst = NULL;
 }

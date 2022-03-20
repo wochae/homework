@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 15:48:46 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/20 15:48:52 by wochae           ###   ########seoul.kr  */
+/*   Created: 2022/03/20 17:31:37 by wochae            #+#    #+#             */
+/*   Updated: 2022/03/20 17:31:44 by wochae           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+#include "libft.h"
+
+t_list *ft_lstnew(void *content)
 {
-	if (97 <= c && c <= 122)
-	{
-		c -= 32;
-		return (c);
-	}
-	else
-		return (c);
+	t_list *head;
+
+	head = malloc(sizeof(t_list));
+	if (head == NULL)
+		return (NULL);
+	head->content = content;
+	head->next = NULL;
+	return (head);
 }
