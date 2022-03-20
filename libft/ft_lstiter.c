@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 17:32:28 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/20 20:17:02 by wochae           ###   ########.fr       */
+/*   Created: 2022/03/20 19:46:45 by wochae            #+#    #+#             */
+/*   Updated: 2022/03/20 20:14:56 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lsttier(t_list *lst, void	(*f)(void *))
 {
-	size_t	i;
 
-	i = 0;
-	while (i < n)
-	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-		{
-			return ((void *)s + i);
-		}
-		i++;
-	}
-	return (0);
 }

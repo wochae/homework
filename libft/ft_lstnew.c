@@ -6,15 +6,15 @@
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 17:31:37 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/20 17:31:44 by wochae           ###   ########seoul.kr  */
+/*   Updated: 2022/03/20 19:14:18 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = malloc(sizeof(t_list));
 	if (head == NULL)
