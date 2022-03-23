@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 21:58:54 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/19 18:27:17 by wochae           ###   ########.fr       */
+/*   Created: 2022/03/20 17:30:25 by wochae            #+#    #+#             */
+/*   Updated: 2022/03/23 15:01:15 by wochae           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void	*s, size_t	n)
+void ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (i < n)
