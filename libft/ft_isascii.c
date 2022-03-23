@@ -6,11 +6,11 @@
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:21:21 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/16 18:49:58 by wochae           ###   ########.fr       */
+/*   Updated: 2022/03/23 21:14:03 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int	c)
+int	ft_isascii(int c)
 {
 	if (0 <= c && c <= 127)
 	{

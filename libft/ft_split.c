@@ -6,15 +6,15 @@
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:22:13 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/23 16:22:02 by wochae           ###   ########seoul.kr  */
+/*   Updated: 2022/03/23 21:14:44 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int find_it(char const *s, char c)
+int	find_it(char const *s, char c)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	while (*s)
@@ -31,9 +31,9 @@ int find_it(char const *s, char c)
 	return (n);
 }
 
-void free_split(char **str)
+void	free_split(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -46,10 +46,10 @@ void free_split(char **str)
 	str = NULL;
 }
 
-int put_sentence(char **str, char const *s, char c)
+int	put_sentence(char **str, char const *s, char c)
 {
-	int i;
-	char *head;
+	int		i;
+	char	*head;
 
 	i = 0;
 	while (*s)
@@ -74,9 +74,9 @@ int put_sentence(char **str, char const *s, char c)
 	return (1);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **str;
+	char	**str;
 
 	if (!s)
 		return (NULL);

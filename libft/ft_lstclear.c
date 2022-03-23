@@ -6,7 +6,7 @@
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:44:35 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/20 19:12:30 by wochae           ###   ########.fr       */
+/*   Updated: 2022/03/23 21:14:13 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*to_del;
 
-	if (!lst || !del)
-		return ;
-	while ((*lst))
+	if (*lst)
 	{
-		to_del = *lst;
-		*lst = (*lst)->next;
-		ft_lstdelone(to_del, del);
+		while (*lst)
+		{
+			to_del = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = to_del;
+		}
+		*lst = 0;
 	}
 }

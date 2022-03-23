@@ -6,15 +6,15 @@
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:15:28 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/23 12:25:04 by wochae           ###   ########seoul.kr  */
+/*   Updated: 2022/03/23 21:14:33 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int is_it(char ch, const char *set)
+int	is_it(char ch, const char *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -26,10 +26,10 @@ int is_it(char ch, const char *set)
 	return (0);
 }
 
-int ft_lefttrim(const char *str, const char *set)
+int	ft_lefttrim(const char *str, const char *set)
 {
-	int i;
-	int value;
+	int	i;
+	int	value;
 
 	i = 0;
 	value = 0;
@@ -44,10 +44,10 @@ int ft_lefttrim(const char *str, const char *set)
 	return (value);
 }
 
-int ft_righttrim(const char *str, const char *set)
+int	ft_righttrim(const char *str, const char *set)
 {
-	int i;
-	int value;
+	int	i;
+	int	value;
 
 	i = (int)ft_strlen(str) - 1;
 	value = 0;
@@ -62,12 +62,12 @@ int ft_righttrim(const char *str, const char *set)
 	return (value);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int start;
-	int end;
-	char *str;
-	int i;
+	int		start;
+	int		end;
+	char	*str;
+	int		i;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);

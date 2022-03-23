@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 17:32:34 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/20 17:32:35 by wochae           ###   ########seoul.kr  */
+/*   Created: 2022/03/19 18:42:00 by wochae            #+#    #+#             */
+/*   Updated: 2022/03/23 19:36:54 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void	*dst, const void	*src, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	if (dst == 0 && src == 0)
+	if (!len || dst == src)
+		return (dst);
+	if (dst == NULL && src == NULL)
 		return (NULL);
-	while (i < n)
+	while (i < len)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;

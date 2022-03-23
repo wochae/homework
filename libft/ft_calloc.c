@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 16:20:18 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/23 21:14:56 by wochae           ###   ########.fr       */
+/*   Created: 2022/03/19 21:18:45 by wochae            #+#    #+#             */
+/*   Updated: 2022/03/23 21:13:59 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_calloc(size_t cnt, size_t n)
 {
-	char	*str;
+	void	*ptr;
+	size_t	i;
 
-	str = (char *)s;
-	while (*str)
+	ptr = malloc(cnt * n);
+	if (ptr == NULL)
+		return (0);
+	i = 0;
+	while (i < cnt * n)
 	{
-		if (*str == (char)c)
-			return (str);
-		str++;
+		*(unsigned char *)(ptr + i) = 0;
+		i++;
 	}
-	if (*str == c)
-		return (str);
-	return (NULL);
+	return (ptr);
 }
