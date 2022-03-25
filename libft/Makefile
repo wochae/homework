@@ -5,88 +5,89 @@
 #                                                     +:+ +:+         +:+      #
 #    By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/16 22:17:23 by wochae            #+#    #+#              #
-#    Updated: 2022/03/23 22:03:58 by wochae           ###   ########.fr        #
+#    Created: 2022/03/25 17:33:29 by wochae            #+#    #+#              #
+#    Updated: 2022/03/25 17:33:30 by wochae           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME := libft.a
+SRCS := ft_isalpha.c \
+       ft_isdigit.c \
+       ft_isalnum.c \
+       ft_isascii.c \
+       ft_isprint.c \
+       ft_strlen.c \
+       ft_memset.c \
+       ft_bzero.c \
+       ft_memcpy.c \
+       ft_memmove.c \
+       ft_strlcpy.c \
+       ft_strlcat.c \
+       ft_strncmp.c \
+       ft_toupper.c \
+       ft_tolower.c \
+       ft_strchr.c \
+       ft_strrchr.c \
+       ft_memchr.c \
+       ft_memcmp.c \
+       ft_strnstr.c \
+       ft_atoi.c \
+       ft_calloc.c \
+       ft_strdup.c \
+       ft_substr.c \
+       ft_strjoin.c \
+       ft_strtrim.c \
+       ft_split.c \
+       ft_itoa.c \
+       ft_strmapi.c \
+       ft_striteri.c \
+       ft_putchar_fd.c \
+       ft_putstr_fd.c \
+       ft_putendl_fd.c \
+       ft_putnbr_fd.c
+SRCS_BONUS := ft_lstnew.c \
+	     ft_lstadd_front.c \
+	     ft_lstsize.c \
+	     ft_lstlast.c \
+	     ft_lstadd_back.c \
+	     ft_lstdelone.c \
+	     ft_lstclear.c \
+	     ft_lstiter.c \
+	     ft_lstmap.c
+OBJS := $(SRCS:.c=.o)
+OBJS_BONUS := $(SRCS_BONUS:.c=.o)
+CC := gcc
+CCFLAGS := -Wall -Wextra -Werror
+INCLUDE := -I./
+AR := ar
+ARFLAGS := rcs
 
-SRCS =			ft_atoi.c \
-				ft_bzero.c \
-				ft_calloc.c \
-				ft_isalnum.c \
-				ft_isalpha.c \
-				ft_isascii.c \
-				ft_isdigit.c \
-				ft_isprint.c \
-				ft_itoa.c \
-				ft_memchr.c \
-				ft_memcmp.c \
-				ft_memcpy.c \
-				ft_memmove.c \
-				ft_memset.c \
-				ft_putchar_fd.c \
-				ft_putendl_fd.c \
-				ft_putnbr_fd.c \
-				ft_putstr_fd.c \
-				ft_split.c \
-				ft_strchr.c \
-				ft_strdup.c \
-				ft_striteri.c \
-				ft_strjoin.c \
-				ft_strlcat.c \
-				ft_strlcpy.c \
-				ft_strlen.c \
-				ft_strmapi.c \
-				ft_strncmp.c \
-				ft_strnstr.c \
-				ft_strrchr.c \
-				ft_strtrim.c \
-				ft_substr.c \
-				ft_tolower.c \
-				ft_toupper.c
-
-
-
-BNS_SRCS =		ft_lstnew.c \
-				ft_lstadd_front.c \
-				ft_lstsize.c \
-				ft_lstlast.c \
-				ft_lstadd_back.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstiter.c \
-				ft_lstmap.c
-
-OBJS = $(SRCS:.c=.o)
-
-BNS_OBJS = $(BNS_SRCS:.c=.o)
-
-FLAGS = -Wall -Wextra -Werror
-
-HEADER = libft.h
-
-ifdef WITH_BONUS
-	OBJ_FILES = $(OBJS) $(BNS_OBJS)
+ifdef IS_BONUS
+	T_OBJS = $(OBJS) $(OBJS_BONUS)
+   	T_SRCS = $(SRCS) $(SRCS_BONUS)
 else
-	OBJ_FILES = $(OBJS)
+	T_OBJS = $(OBJS)
+   	T_SRCS = $(SRCS)
 endif
 
-$(NAME) : $(OBJ_FILES) $(HEADER)
-		ar -rcs $(NAME) $(OBJ_FILES)
+$(NAME): $(T_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(T_OBJS)
 
-all : $(NAME)
+$(T_OBJS):  $(T_SRCS)
+	$(CC) $(CCFLAGS) -c $(T_SRCS) $(INCLUDE)
 
-bonus :
-		make WITH_BONUS=1 all
+all: $(NAME)
 
-clean :
-		rm -f $(OBJS) $(BNS_OBJS)
+bonus:
+	@make IS_BONUS=1 \
+	all
 
-fclean : clean
-		rm -f $(NAME)
+clean:
+	rm -f $(OBJS) $(OBJS_BONUS)
+
+fclean: clean
+	rm -f $(NAME)
 
 re : fclean all
 
-.PHONY : all clean fclean re bonus
+.PHONY: all clean fclean re bonus
