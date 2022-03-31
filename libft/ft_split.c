@@ -6,7 +6,7 @@
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:22:13 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/23 21:14:44 by wochae           ###   ########.fr       */
+/*   Updated: 2022/03/31 16:14:39 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	put_sentence(char **str, char const *s, char c)
 		else
 			++s;
 	}
-	str[i] = NULL;
 	return (1);
 }
 
@@ -80,7 +79,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	str = ft_calloc(sizeof(char *), (find_it(s, c) + 1));
+	str = ft_calloc(sizeof(char *), find_it(s, c) + 1);
 	if (str == NULL)
 		return (NULL);
 	if (!put_sentence(str, s, c))

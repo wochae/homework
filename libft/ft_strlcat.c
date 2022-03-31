@@ -6,7 +6,7 @@
 /*   By: wochae <wochae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 15:05:31 by wochae            #+#    #+#             */
-/*   Updated: 2022/03/23 21:14:38 by wochae           ###   ########.fr       */
+/*   Updated: 2022/03/31 15:19:44 by wochae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	if (ft_strlen(dst) > size)
+	if (ft_strlen(dst) >= size)
 		return (ft_strlen(src) + size);
 	while (*dst != 0)
 	{
