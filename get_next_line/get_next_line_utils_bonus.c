@@ -42,7 +42,7 @@ char *append_buf(char const *save, char const *buf)
 	if (new == NULL)
 		return (NULL);
 	ft_strlcpy(new, save, ft_strlen(save) + 1);
-	ft_strlcpy(new, ft_strlen(save), buf, ft_strlen(buf) + 1);
+	ft_strlcpy(new + ft_strlen(save), buf, ft_strlen(buf) + 1);
 	return (new);
 }
 
