@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#define BUFFER_SIZE 42
 
 char *get_next_line(int fd)
 {
@@ -45,7 +44,11 @@ char *read_iter(char **s_save, int fd)
 
 	buf = malloc(BUFFER_SIZE + 1);
 	if (buf == NULL)
+	{
+		free(*s_save);
+		*s_save = NULL;
 		return (NULL);
+	}
 	nread = 0;
 	new = *s_save;
 	while (new == NULL || !ft_strchr(new, '\n'))
