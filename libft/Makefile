@@ -44,7 +44,10 @@ SRCS := ft_isalpha.c \
        ft_putchar_fd.c \
        ft_putstr_fd.c \
        ft_putendl_fd.c \
-       ft_putnbr_fd.c
+       ft_putnbr_fd.c \
+       ft_putchr_cnt.c \
+       ft_putstr_cnt.c
+
 SRCS_BONUS := ft_lstnew.c \
 	     ft_lstadd_front.c \
 	     ft_lstsize.c \
