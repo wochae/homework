@@ -42,7 +42,7 @@ fclean:	clean
 			make fclean --directory=$(LIBFTDIR)
 			$(RM) $(NAME)
 
-re:		fclean all
+re:		fclean bonus
 
 $(NAME): $(OBJS)
 			make bonus --directory=$(LIBFTDIR)
